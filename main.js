@@ -1,7 +1,3 @@
-/* ═══════════════════════════════════════════════════════════
-   TRADING EXOTICS — motion
-   No dependencies. Native scroll (keeps position:sticky honest).
-   ═══════════════════════════════════════════════════════════ */
 (() => {
 'use strict';
 
@@ -16,8 +12,6 @@ const ease  = t => t * t * (3 - 2 * t);
 const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const FINE    = matchMedia('(hover:hover) and (pointer:fine)').matches;
 
-/* ══════════════ 1 · SPLIT TEXT ══════════════════════════ */
-// characters (hero) — each gets its own delay so the line unrolls
 function splitChars(el) {
   const txt = el.textContent;
   el.textContent = '';
@@ -51,11 +45,6 @@ if (om) {
   om.innerHTML = [...om.textContent].map(c => `<i>${c}</i>`).join('');
 }
 
-/* ══════════════ 2 · REVEAL ON ENTER ═════════════════════ */
-/* Masked lines sit fully outside their overflow:hidden wrapper until they play,
-   and IntersectionObserver clips against ancestors — so the inner element never
-   reads as visible. Observe the wrapper (.line), which is never clipped away.
-   CSS handles the rest via `.is-in .line__in`. */
 $$('.line').forEach(line => {
   const inner = $('.line__in', line);
   if (!inner) return;
@@ -81,7 +70,6 @@ const io = new IntersectionObserver((entries) => {
 
 revealTargets.forEach(el => io.observe(el));
 
-/* ══════════════ 3 · CURSOR ══════════════════════════════ */
 if (FINE && !REDUCED) {
   const cur  = $('.cursor');
   const ring = $('.cursor__ring');
@@ -109,7 +97,6 @@ if (FINE && !REDUCED) {
   });
 }
 
-/* ══════════════ 4 · MAGNETIC ════════════════════════════ */
 if (FINE && !REDUCED) {
   $$('[data-magnetic]').forEach(el => {
     const pull = 0.32;
@@ -128,7 +115,6 @@ if (FINE && !REDUCED) {
   });
 }
 
-/* ══════════════ 5 · PRACTICE HOVER PLATES ═══════════════ */
 if (FINE && !REDUCED) {
   $$('.prac__row').forEach(row => {
     const img = $('.prac__img', row);
@@ -150,7 +136,6 @@ if (FINE && !REDUCED) {
   });
 }
 
-/* ══════════════ 6 · SCROLL ENGINE ═══════════════════════ */
 const bar      = $('.progress i');
 const nav      = $('#nav');
 const parallax = $$('[data-parallax]');
@@ -185,17 +170,14 @@ function frame() {
   velo = lerp(velo, y - lastY, 0.14);
   lastY = y;
 
-  /* progress hairline */
   const max = document.documentElement.scrollHeight - vh;
   if (bar) bar.style.transform = `scaleX(${max > 0 ? clamp(y / max) : 0})`;
 
-  /* nav: solidify after hero, hide when diving down */
   if (nav) {
     nav.classList.toggle('is-stuck', y > vh * 0.7);
     nav.classList.toggle('is-hidden', velo > 6 && y > vh * 1.2);
   }
 
-  /* parallax plates */
   parallax.forEach(el => {
     const r = el.getBoundingClientRect();
     if (r.bottom < -200 || r.top > vh + 200) return;
@@ -203,7 +185,6 @@ function frame() {
     el.style.transform = `translate3d(0,${(-rel * parseFloat(el.dataset.parallax) * vh).toFixed(2)}px,0)`;
   });
 
-  /* marquee — constant drift, nudged by scroll velocity */
   if (marquees.length) {
     marqX -= 0.55 + Math.abs(velo) * 0.06;
     const half = marquees[0].scrollWidth / 2;
@@ -211,7 +192,6 @@ function frame() {
     marquees.forEach(m => (m.style.transform = `translate3d(${marqX}px,0,0)`));
   }
 
-  /* ── the swap ─────────────────────────────────────────── */
   if (swapSec && cardA && cardB) {
     const r = swapSec.getBoundingClientRect();
     const span = swapSec.offsetHeight - vh;
@@ -281,7 +261,6 @@ function frame() {
   requestAnimationFrame(frame);
 }
 
-/* ══════════════ 7 · COUNT-UP ════════════════════════════ */
 $$('[data-count]').forEach(el => {
   const end = parseFloat(el.dataset.count);
   const suffix = el.dataset.suffix || '';
@@ -301,7 +280,6 @@ $$('[data-count]').forEach(el => {
   ob.observe(el);
 });
 
-/* ══════════════ 8 · LEDGER DRAG ═════════════════════════ */
 if (rail) {
   let down = false, sx = 0, sy = 0;
   rail.addEventListener('pointerdown', e => { down = true; sx = e.clientX; sy = scrollY; });
@@ -313,7 +291,6 @@ if (rail) {
   });
 }
 
-/* ══════════════ 9 · SMOOTH ANCHORS ══════════════════════ */
 $$('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const t = $(a.getAttribute('href'));
@@ -323,7 +300,6 @@ $$('a[href^="#"]').forEach(a => {
   });
 });
 
-/* ══════════════ 10 · LOADER ═════════════════════════════ */
 (function boot() {
   // rAF is frozen in a background tab, so a page opened in one would sit on a
   // black screen until focused. Timers keep running — use one as a floor.
@@ -371,7 +347,6 @@ $$('a[href^="#"]').forEach(a => {
   requestAnimationFrame(frame);
 })();
 
-/* ══════════════ 11 · RESIZE ═════════════════════════════ */
 let rt;
 addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(measure, 150); });
 addEventListener('load', measure);
