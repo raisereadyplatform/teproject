@@ -276,9 +276,10 @@ main{will-change:transform}
 .swap__wire--r{left:100%}
 
 .swap__words{position:absolute;left:0;right:0;bottom:clamp(72px,11vh,132px);display:grid;place-items:center;pointer-events:none}
-.swap__word{grid-area:1/1;font-family:var(--f-disp);font-weight:400;
+.swap__word{font-family:var(--f-disp);font-weight:400;
   font-size:clamp(34px,7vw,104px);line-height:1;letter-spacing:-.035em;
   overflow:hidden;padding-bottom:.16em;margin-bottom:-.16em}
+.js .swap__word{grid-area:1/1}
 .js .swap__word span{display:block;transform:translateY(calc(100% + .3em));transition:transform .85s var(--ease)}
 .swap__word.is-on span{transform:translateY(0)}
 .swap__word[data-beat="2"] span{color:var(--gold);font-style:italic}
@@ -411,5 +412,4 @@ main{will-change:transform}
   .ledger__sticky{position:static;height:auto;padding:80px 0}
   .ledger__rail{overflow-x:auto}
   .cursor{display:none}
-}
 
