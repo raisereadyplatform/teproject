@@ -330,4 +330,3 @@ addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(measure, 15
 addEventListener('load', measure);
 
 })();
-
