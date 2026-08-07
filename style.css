@@ -54,16 +54,16 @@ main{will-change:transform}
   text-transform:uppercase;color:var(--bone-dim)}
 
 .line{display:block;overflow:hidden;padding-bottom:.16em;margin-bottom:-.16em}
-.line__in{display:block;transform:translateY(calc(100% + .3em));transition:transform 1.05s var(--ease)}
+.js .line__in{display:block;transform:translateY(calc(100% + .3em));transition:transform 1.05s var(--ease)}
 .is-in .line__in,.line__in.is-in{transform:translateY(0)}
 
-.reveal-up{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform 1.05s var(--ease)}
+.js .reveal-up{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform 1.05s var(--ease)}
 .reveal-up.is-in{opacity:1;transform:none}
 
-.char{display:inline-block;transform:translateY(calc(100% + .3em)) rotate(4deg);transition:transform .95s var(--ease)}
+.js .char{display:inline-block;transform:translateY(calc(100% + .3em)) rotate(4deg);transition:transform .95s var(--ease)}
 .is-in .char{transform:none}
 
-.word{display:inline-block;opacity:.22;filter:blur(3.5px);transform:translateY(6px);
+.js .word{display:inline-block;opacity:.22;filter:blur(3.5px);transform:translateY(6px);
   will-change:filter,opacity,transform;
   transition:opacity .7s var(--ease),filter .7s var(--ease),transform .8s var(--ease),color .7s ease}
 .word.is-lit{opacity:1;filter:blur(0);transform:none;color:var(--bone)}
@@ -237,9 +237,9 @@ main{will-change:transform}
   25%,75%{opacity:.55;transform:scaleX(.92)}50%{opacity:.85;transform:scaleX(1)}}
 .scale__floor{transform-box:view-box;transform-origin:130px 216px}
 
-.scale__ink{stroke-dasharray:var(--l,300);stroke-dashoffset:var(--l,300)}
+.js .scale__ink{stroke-dasharray:var(--l,300);stroke-dashoffset:var(--l,300)}
 .scale.is-in .scale__ink{stroke-dashoffset:0;transition:stroke-dashoffset 1.9s var(--ease)}
-.scale__bead,.scale__ring,.scale__pivot,.scale__floor{opacity:0;transition:opacity .9s var(--ease) 1.25s}
+.js .scale__bead,.js .scale__ring,.js .scale__pivot,.js .scale__floor{opacity:0;transition:opacity .9s var(--ease) 1.25s}
 .scale.is-in .scale__bead,.scale.is-in .scale__ring,
 .scale.is-in .scale__pivot,.scale.is-in .scale__floor{opacity:1}
 
@@ -279,7 +279,7 @@ main{will-change:transform}
 .swap__word{grid-area:1/1;font-family:var(--f-disp);font-weight:400;
   font-size:clamp(34px,7vw,104px);line-height:1;letter-spacing:-.035em;
   overflow:hidden;padding-bottom:.16em;margin-bottom:-.16em}
-.swap__word span{display:block;transform:translateY(calc(100% + .3em));transition:transform .85s var(--ease)}
+.js .swap__word span{display:block;transform:translateY(calc(100% + .3em));transition:transform .85s var(--ease)}
 .swap__word.is-on span{transform:translateY(0)}
 .swap__word[data-beat="2"] span{color:var(--gold);font-style:italic}
 
@@ -322,7 +322,7 @@ main{will-change:transform}
   transition:color .6s var(--ease)}
 .prac__ico svg{width:100%;height:auto;display:block;overflow:visible}
 
-.prac__ico svg *{stroke-dasharray:var(--len,220);stroke-dashoffset:var(--len,220);
+.js .prac__ico svg *{stroke-dasharray:var(--len,220);stroke-dashoffset:var(--len,220);
   transition:stroke-dashoffset 1.5s var(--ease)}
 .prac__row.is-in .prac__ico svg *{stroke-dashoffset:0}
 .prac__row:hover .prac__ico{color:var(--bone)}
@@ -402,7 +402,7 @@ main{will-change:transform}
   .grain{animation:none}
   .line__in,.char{transform:none!important}
   .reveal-up{opacity:1!important;transform:none!important}
-  .word{opacity:1!important}
+  .word{opacity:1!important;filter:none!important;transform:none!important}
   .swap{height:auto}
   .swap__sticky{position:static;height:auto;padding:80px 0}
   .swap__words{position:static;margin-top:40px}
