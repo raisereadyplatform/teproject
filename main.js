@@ -5,7 +5,7 @@ const $  = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 const lerp  = (a, b, t) => a + (b - a) * t;
-/* smooth 0→1 ramp between two thresholds */
+
 const range = (v, a, b) => clamp((v - a) / (b - a));
 const ease  = t => t * t * (3 - 2 * t);
 
@@ -23,7 +23,7 @@ function splitChars(el) {
     el.appendChild(s);
   });
 }
-// words (quote) — lit one by one as the block crosses the viewport
+
 function splitWords(el) {
   const words = el.textContent.trim().split(/\s+/);
   el.textContent = '';
@@ -39,7 +39,6 @@ function splitWords(el) {
 $$('[data-split]').forEach(splitChars);
 $$('[data-split-words]').forEach(splitWords);
 
-// OMERTA — per-letter so it can stagger
 const om = $('[data-omerta]');
 if (om) {
   om.innerHTML = [...om.textContent].map(c => `<i>${c}</i>`).join('');
@@ -48,13 +47,13 @@ if (om) {
 $$('.line').forEach(line => {
   const inner = $('.line__in', line);
   if (!inner) return;
-  // stagger sibling lines within the same heading
+
   const sibs = [...line.parentElement.children].filter(n => n.classList.contains('line'));
   inner.style.transitionDelay = (sibs.indexOf(line) * 0.11) + 's';
 });
 
 const revealTargets = [
-  ...$$('.reveal-up'), ...$$('.line'), ...$$('.thesis__plate')
+  ...$$('.reveal-up'), ...$$('.line'), ...$$('.prac__row'), ...$$('.scale')
 ];
 
 const io = new IntersectionObserver((entries) => {
@@ -74,8 +73,8 @@ if (FINE && !REDUCED) {
   const cur  = $('.cursor');
   const ring = $('.cursor__ring');
   const dot  = $('.cursor__dot');
-  let mx = innerWidth / 2, my = innerHeight / 2;   // target
-  let rx = mx, ry = my;                            // ring (trails)
+  let mx = innerWidth / 2, my = innerHeight / 2;
+  let rx = mx, ry = my;
 
   addEventListener('mousemove', e => {
     mx = e.clientX; my = e.clientY;
@@ -90,7 +89,6 @@ if (FINE && !REDUCED) {
     requestAnimationFrame(ringLoop);
   })();
 
-  // ring swells over anything clickable — no text label
   $$('a,button,.prac__row').forEach(el => {
     el.addEventListener('mouseenter', () => cur.classList.add('is-hot'));
     el.addEventListener('mouseleave', () => cur.classList.remove('is-hot'));
@@ -115,26 +113,14 @@ if (FINE && !REDUCED) {
   });
 }
 
-if (FINE && !REDUCED) {
-  $$('.prac__row').forEach(row => {
-    const img = $('.prac__img', row);
-    if (!img) return;
-    let tx = 0, ty = 0, cx = 0, cy = 0, live = false;
+$$('.scale__ink').forEach(el => el.style.setProperty('--l', Math.ceil(el.getTotalLength())));
 
-    row.addEventListener('mouseenter', () => { row.classList.add('is-hot'); live = true; loop(); });
-    row.addEventListener('mouseleave', () => { row.classList.remove('is-hot'); live = false; });
-    row.addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; }, { passive: true });
-
-    function loop() {
-      if (!live) return;
-      cx = lerp(cx, tx, 0.12);
-      cy = lerp(cy, ty, 0.12);
-      const tilt = clamp((tx - cx) * 0.35, -12, 12);
-      img.style.transform = `translate(${cx}px,${cy}px) translate(-50%,-50%) rotate(${tilt - 2}deg)`;
-      requestAnimationFrame(loop);
-    }
+$$('.prac__ico svg').forEach(svg => {
+  svg.querySelectorAll('path,circle,rect,line,polyline').forEach(el => {
+    const len = Math.ceil(el.getTotalLength ? el.getTotalLength() : 220);
+    el.style.setProperty('--len', len);
   });
-}
+});
 
 const bar      = $('.progress i');
 const nav      = $('#nav');
@@ -151,7 +137,7 @@ const swapBar  = $('#swapBar');
 const swapPct  = $('#swapPct');
 const ledger   = $('#ledger');
 const rail     = $('#rail');
-const quoteQ   = $('.quote__q');
+const litBlocks = $$('[data-split-words]');
 
 let lastY = scrollY, velo = 0, marqX = 0, railSpan = 0, colStack = false;
 
@@ -159,7 +145,7 @@ function measure() {
   colStack = innerWidth <= 760;
   if (ledger && rail) {
     railSpan = Math.max(0, rail.scrollWidth - innerWidth);
-    // the section is exactly as tall as it needs to be to pan the rail
+
     ledger.style.height = (innerHeight + railSpan) + 'px';
   }
 }
@@ -181,7 +167,7 @@ function frame() {
   parallax.forEach(el => {
     const r = el.getBoundingClientRect();
     if (r.bottom < -200 || r.top > vh + 200) return;
-    const rel = (r.top + r.height / 2 - vh / 2) / vh;   // -1 … 1
+    const rel = (r.top + r.height / 2 - vh / 2) / vh;
     el.style.transform = `translate3d(0,${(-rel * parseFloat(el.dataset.parallax) * vh).toFixed(2)}px,0)`;
   });
 
@@ -197,13 +183,11 @@ function frame() {
     const span = swapSec.offsetHeight - vh;
     const p = span > 0 ? clamp(-r.top / span) : 0;
 
-    // s: the crossing itself, held still at both ends
     const s = ease(range(p, 0.18, 0.82));
-    const arc = Math.sin(s * Math.PI);          // 0→1→0, peaks mid-cross
+    const arc = Math.sin(s * Math.PI);
 
     if (colStack) {
-      // stacked layout: swing them apart sideways as they pass, or they'd
-      // land on the same point and read as one card
+
       const d = cardB.offsetTop - cardA.offsetTop;
       const side = cardA.offsetWidth * 0.30;
       cardA.style.transform =
@@ -212,8 +196,7 @@ function frame() {
         `translate3d(${arc * side}px,${-s * d}px,0) scale(${1 - arc * 0.16}) rotate(${arc * 3}deg)`;
     } else {
       const d = cardB.offsetLeft - cardA.offsetLeft;
-      // A rides high and near, B swings low and far — so they visibly pass,
-      // rather than stacking into a single blur at the midpoint.
+
       const lift = Math.min(innerHeight * 0.13, 118);
       cardA.style.transform =
         `translate3d(${s * d}px,${-arc * lift}px,${arc * 240}px) rotateY(${-arc * 18}deg) rotateZ(${-arc * 2.5}deg)`;
@@ -221,12 +204,10 @@ function frame() {
         `translate3d(${-s * d}px,${arc * lift}px,${-arc * 300}px) rotateY(${arc * 18}deg) rotateZ(${arc * 2.5}deg)`;
     }
 
-    // B is the one that recedes, in both layouts
     cardA.style.zIndex = '2';
     cardB.style.zIndex = '1';
     cardB.style.opacity = String(1 - arc * 0.35);
 
-    // identities dissolve while the assets are in motion, and resolve once settled
     const metaFade = String(Math.pow(1 - arc, 1.6));
     if (metaA) metaA.style.opacity = metaFade;
     if (metaB) metaB.style.opacity = metaFade;
@@ -235,28 +216,24 @@ function frame() {
     if (swapBar) swapBar.style.transform = `scaleX(${p})`;
     if (swapPct) swapPct.textContent = String(Math.round(p * 100)).padStart(2, '0') + '%';
 
-    // three beats
     const beat = p < 0.3 ? 0 : p < 0.68 ? 1 : 2;
     words.forEach(w => w.classList.toggle('is-on', +w.dataset.beat === beat));
   }
 
-  /* ── ledger: vertical scroll → horizontal pan ─────────── */
   if (ledger && rail && railSpan > 0) {
     const r = ledger.getBoundingClientRect();
     const p = clamp(-r.top / railSpan);
     rail.style.transform = `translate3d(${-p * railSpan}px,0,0)`;
   }
 
-  /* ── quote: words lit as the line sweeps through ──────── */
-  if (quoteQ) {
-    const r = quoteQ.getBoundingClientRect();
-    if (r.top < vh && r.bottom > 0) {
-      const p = clamp((vh * 0.82 - r.top) / (vh * 0.55));
-      const ws = quoteQ.children;
-      const n = Math.floor(p * ws.length * 1.15);
-      for (let i = 0; i < ws.length; i++) ws[i].classList.toggle('is-lit', i < n);
-    }
-  }
+  litBlocks.forEach(el => {
+    const r = el.getBoundingClientRect();
+    if (r.top > vh || r.bottom < 0) return;
+    const p = clamp((vh * 0.82 - r.top) / (vh * 0.55));
+    const ws = el.children;
+    const n = Math.floor(p * ws.length * 1.15);
+    for (let i = 0; i < ws.length; i++) ws[i].classList.toggle('is-lit', i < n);
+  });
 
   requestAnimationFrame(frame);
 }
@@ -301,8 +278,7 @@ $$('a[href^="#"]').forEach(a => {
 });
 
 (function boot() {
-  // rAF is frozen in a background tab, so a page opened in one would sit on a
-  // black screen until focused. Timers keep running — use one as a floor.
+
   let failsafe;
   const loader = $('#loader');
   const fill   = $('.loader__bar i');
@@ -318,7 +294,7 @@ $$('a[href^="#"]').forEach(a => {
     loader.classList.add('is-done');
     document.body.classList.remove('is-loading');
     setTimeout(() => loader.remove(), 1600);
-    // hero copy unrolls once the doors are moving
+
     setTimeout(() => {
       $$('#hero .line, #hero .reveal-up').forEach(el => {
         const d = parseFloat(el.dataset.delay || 0);
