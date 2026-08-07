@@ -1,4 +1,4 @@
-<!doctype html>
+!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;1,6..96,400&family=Tenor+Sans&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body class="is-loading">
 
@@ -66,7 +66,7 @@
 <!-- ══════════════ 01 · HERO ══════════════ -->
 <section class="hero" id="hero">
   <div class="hero__media" data-parallax="0.18">
-    <img src="hero-taillights.jpg" alt="Ferrari tail lights glowing in a darkened room" fetchpriority="high">
+    <img src="assets/hero-taillights.jpg" alt="Ferrari tail lights glowing in a darkened room" fetchpriority="high">
   </div>
   <div class="hero__scrim"></div>
 
@@ -97,8 +97,8 @@
 <!-- ══════════════ marquee ══════════════ -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee__track" data-marquee>
-    <span>Supercars<i>◆</i>Private Real Estate<i>◆</i>Equity Stakes<i>◆</i>Aircraft<i>◆</i>Rare Collectibles<i>◆</i></span>
-    <span>Supercars<i>◆</i>Private Real Estate<i>◆</i>Equity Stakes<i>◆</i>Aircraft<i>◆</i>Rare Collectibles<i>◆</i></span>
+    <span class="mq__run"><span class="mq__item"><svg class="mq__ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.8 21.5v-2.1c0-.7.45-1.25 1.15-1.45l8.85-2.85c.15-.05.28-.13.4-.24l3.5-2.9c.6-.5 1.35-.77 2.15-.77h1.9c.95 0 1.85.38 2.5 1.06l3.9 4.05c.15.16.34.27.55.33l1.25.35c.75.2 1.25.9 1.25 1.7v2.82z"/><circle cx="8.8" cy="21.5" r="3.3"/><circle cx="23.2" cy="21.5" r="3.3"/></svg><em>Supercars</em></span><span class="mq__item"><svg class="mq__ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 12.6L16 5l12.6 7.6z"/><path d="M4.6 12.6h22.8"/><path d="M5.4 15.6h21.2"/><path d="M7 15.6v8.8M12.2 15.6v8.8M19.8 15.6v8.8M25 15.6v8.8"/><path d="M5.4 24.4h21.2"/><path d="M3.4 27h25.2"/></svg><em>Private Real Estate</em></span><span class="mq__item"><svg class="mq__ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 25h24"/><path d="M7 20l5.5-6.5 4.5 4L26 8"/><path d="M20.5 8H26v5.5"/></svg><em>Equity Stakes</em></span><span class="mq__item"><svg class="mq__ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3.5c1.1 0 1.8 1.4 1.8 3.2v5.6l9.2 5.2v2.3l-9.2-2.8v5.1l3 2.2v1.7L16 25.4l-4.8 1.1v-1.7l3-2.2v-5.1L5 20.3V18l9.2-5.2V6.7c0-1.8.7-3.2 1.8-3.2z"/></svg><em>Aircraft</em></span><span class="mq__item"><svg class="mq__ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7h14l5 7-12 12L4 14z"/><path d="M9 7l3.4 7M23 7l-3.4 7M4 14h24M12.4 14L16 26M19.6 14L16 26"/></svg><em>Rare Collectibles</em></span></span>
+    <span class="mq__run"><span class="mq__item"><svg class="mq__ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.8 21.5v-2.1c0-.7.45-1.25 1.15-1.45l8.85-2.85c.15-.05.28-.13.4-.24l3.5-2.9c.6-.5 1.35-.77 2.15-.77h1.9c.95 0 1.85.38 2.5 1.06l3.9 4.05c.15.16.34.27.55.33l1.25.35c.75.2 1.25.9 1.25 1.7v2.82z"/><circle cx="8.8" cy="21.5" r="3.3"/><circle cx="23.2" cy="21.5" r="3.3"/></svg><em>Supercars</em></span><span class="mq__item"><svg class="mq__ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 12.6L16 5l12.6 7.6z"/><path d="M4.6 12.6h22.8"/><path d="M5.4 15.6h21.2"/><path d="M7 15.6v8.8M12.2 15.6v8.8M19.8 15.6v8.8M25 15.6v8.8"/><path d="M5.4 24.4h21.2"/><path d="M3.4 27h25.2"/></svg><em>Private Real Estate</em></span><span class="mq__item"><svg class="mq__ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 25h24"/><path d="M7 20l5.5-6.5 4.5 4L26 8"/><path d="M20.5 8H26v5.5"/></svg><em>Equity Stakes</em></span><span class="mq__item"><svg class="mq__ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3.5c1.1 0 1.8 1.4 1.8 3.2v5.6l9.2 5.2v2.3l-9.2-2.8v5.1l3 2.2v1.7L16 25.4l-4.8 1.1v-1.7l3-2.2v-5.1L5 20.3V18l9.2-5.2V6.7c0-1.8.7-3.2 1.8-3.2z"/></svg><em>Aircraft</em></span><span class="mq__item"><svg class="mq__ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7h14l5 7-12 12L4 14z"/><path d="M9 7l3.4 7M23 7l-3.4 7M4 14h24M12.4 14L16 26M19.6 14L16 26"/></svg><em>Rare Collectibles</em></span></span>
   </div>
 </div>
 
@@ -114,10 +114,72 @@
   </h2>
 
   <div class="thesis__body">
-    <p class="reveal-up">Supercars. Private real estate. Equity stakes. Aircraft. Rare collectibles. Assets that inherently hold substantial value, yet remain constrained by traditional marketplaces, treated as static listings that demand a cash-based exit.</p>
-    <p class="reveal-up" data-delay="0.1">In reviewing every structured exchange available to private principals, one absence was conspicuous: no discreet, sophisticated venue existed for seamless, direct asset-to-asset transaction.</p>
-    <p class="thesis__punch reveal-up" data-delay="0.2">Trading Exotics solved that.</p>
+    <p class="thesis__para" data-split-words>Supercars, private real estate, equity stakes, aircraft, and rare collectibles. Assets that inherently hold substantial value are often constrained by traditional marketplaces, treated as static listings that demand cash based exits. In reviewing structured exchanges, it became clear that no discreet, sophisticated platform exists for seamless, direct asset to asset transactions.</p>
+    <p class="thesis__punch reveal-up" data-delay="0.15">Trading Exotics solved that.</p>
   </div>
+
+  <figure class="scale" aria-hidden="true">
+    <svg class="scale__svg" viewBox="0 0 260 258" fill="none">
+      <defs>
+        <!-- polished gold; the sheen slides along this -->
+        <linearGradient id="teGold" gradientUnits="userSpaceOnUse" x1="-90" y1="0" x2="90" y2="60">
+          <stop offset="0"    stop-color="#7c6234"/>
+          <stop offset=".34"  stop-color="#c6a76a"/>
+          <stop offset=".5"   stop-color="#f6e8c4"/>
+          <stop offset=".66"  stop-color="#c6a76a"/>
+          <stop offset="1"    stop-color="#7c6234"/>
+        </linearGradient>
+        <radialGradient id="teBead" cx="34%" cy="28%" r="72%">
+          <stop offset="0"   stop-color="#fff4da"/>
+          <stop offset=".45" stop-color="#cdae70"/>
+          <stop offset="1"   stop-color="#6b5330"/>
+        </radialGradient>
+        <radialGradient id="teFloor">
+          <stop offset="0"   stop-color="#c6a76a" stop-opacity=".28"/>
+          <stop offset="1"   stop-color="#c6a76a" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="teBloom" x="-45%" y="-45%" width="190%" height="190%">
+          <feGaussianBlur stdDeviation="2.4" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <ellipse class="scale__floor" cx="130" cy="216" rx="86" ry="11" fill="url(#teFloor)"/>
+
+      <g class="scale__body" stroke="url(#teGold)" stroke-width="1.3"
+         stroke-linecap="round" stroke-linejoin="round" filter="url(#teBloom)">
+        <path class="scale__ink" d="M130 78v118"/>
+        <path class="scale__ink" d="M108 196q22 9 44 0"/>
+        <path class="scale__ink" d="M116 204h28"/>
+
+        <g class="scale__beam">
+          <path class="scale__ink" d="M42 74h176"/>
+          <circle class="scale__ring" cx="42"  cy="74" r="3"/>
+          <circle class="scale__ring" cx="218" cy="74" r="3"/>
+          <circle class="scale__pivot" cx="130" cy="74" r="5.5" fill="#0a0a0a"/>
+          <circle class="scale__pivot" cx="130" cy="74" r="1.8" fill="url(#teBead)" stroke="none"/>
+        </g>
+
+        <g class="scale__pan scale__pan--l">
+          <g class="scale__sway" style="transform-origin:42px 74px">
+            <path class="scale__ink" d="M42 76l-23 42M42 76l23 42"/>
+            <path class="scale__ink" d="M17 117q25 19 50 0"/>
+            <circle class="scale__bead" cx="42" cy="123" r="4.6" fill="url(#teBead)" stroke="none"/>
+          </g>
+        </g>
+
+        <g class="scale__pan scale__pan--r">
+          <g class="scale__sway scale__sway--lag" style="transform-origin:218px 74px">
+            <path class="scale__ink" d="M218 76l-23 42M218 76l23 42"/>
+            <path class="scale__ink" d="M193 117q25 19 50 0"/>
+            <circle class="scale__bead" cx="218" cy="123" r="4.6" fill="url(#teBead)" stroke="none"/>
+          </g>
+        </g>
+      </g>
+    </svg>
+    <figcaption class="scale__cap">Even trade</figcaption>
+  </figure>
+
 
 </section>
 
@@ -128,7 +190,7 @@
     <div class="swap__stage">
       <!-- asset A -->
       <article class="card card--a" id="cardA">
-        <div class="card__img"><img src="f40.jpg" alt="Red Ferrari F40" loading="lazy"></div>
+        <div class="card__img"><img src="assets/f40.jpg" alt="Red Ferrari F40" loading="lazy"></div>
         <div class="card__meta">
           <span class="card__name">Ferrari F40</span>
         </div>
@@ -144,7 +206,7 @@
 
       <!-- asset B -->
       <article class="card card--b" id="cardB">
-        <div class="card__img"><img src="countach.jpg" alt="White Lamborghini Countach LPI 800-4" loading="lazy"></div>
+        <div class="card__img"><img src="assets/countach.jpg" alt="White Lamborghini Countach LPI 800-4" loading="lazy"></div>
         <div class="card__meta">
           <span class="card__name">Countach LPI 800-4</span>
         </div>
@@ -174,34 +236,30 @@
   </div>
 
   <ol class="prac">
-    <li class="prac__row">
-      <span class="prac__n">01</span>
-      <h3 class="prac__t">Creative HNWI Trading</h3>
-      <p class="prac__d">Structures that move value without liquidating it. Part-exchange, multi-leg, cash-balanced. Engineered around what you are unwilling to give up.</p>
-      <span class="prac__img"><img src="lambo-transport.jpg" alt="" loading="lazy"></span>
-      <span class="prac__line"></span>
-    </li>
-    <li class="prac__row">
-      <span class="prac__n">02</span>
-      <h3 class="prac__t">Structured Introductions</h3>
-      <p class="prac__d">We do not run a listings board. Counterparties are approached individually, on your terms, and only once the fit is real.</p>
-      <span class="prac__img"><img src="saleen-s7.jpg" alt="" loading="lazy"></span>
-      <span class="prac__line"></span>
-    </li>
-    <li class="prac__row">
-      <span class="prac__n">03</span>
-      <h3 class="prac__t">Verified Ownership</h3>
-      <p class="prac__d">Title, provenance, encumbrance and condition confirmed before a single name is exchanged. Nothing moves on a handshake alone.</p>
-      <span class="prac__img"><img src="ford-gt.jpg" alt="" loading="lazy"></span>
-      <span class="prac__line"></span>
-    </li>
-    <li class="prac__row">
-      <span class="prac__n">04</span>
-      <h3 class="prac__t">Confidential Negotiation</h3>
-      <p class="prac__d">No auction. No press. No public record. The transaction exists between two parties and the paperwork that closes it.</p>
-      <span class="prac__img"><img src="ferrari-812.jpg" alt="" loading="lazy"></span>
-      <span class="prac__line"></span>
-    </li>
+      <li class="prac__row">
+        <span class="prac__ico" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"
+          stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18h32l-8-8"/><path d="M43 30H11l8 8"/></svg></span>
+        <h3 class="prac__t">Creative HNWI Trading</h3>
+        <p class="prac__d">Move value without liquidating it.</p>
+      </li>
+      <li class="prac__row">
+        <span class="prac__ico" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"
+          stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="24" r="7"/><circle cx="35" cy="24" r="7"/><path d="M20 24h8"/></svg></span>
+        <h3 class="prac__t">Structured Introductions</h3>
+        <p class="prac__d">Counterparties approached one at a time.</p>
+      </li>
+      <li class="prac__row">
+        <span class="prac__ico" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"
+          stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M24 5l16 7v11c0 10-7 16-16 20-9-4-16-10-16-20V12z"/><path d="M17 24l5 5 10-11"/></svg></span>
+        <h3 class="prac__t">Verified Ownership</h3>
+        <p class="prac__d">Title and provenance confirmed before any name is exchanged.</p>
+      </li>
+      <li class="prac__row">
+        <span class="prac__ico" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"
+          stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="21" width="28" height="20" rx="2"/><path d="M17 21v-5a7 7 0 0 1 14 0v5"/></svg></span>
+        <h3 class="prac__t">Confidential Negotiation</h3>
+        <p class="prac__d">No auction. No press. No public record.</p>
+      </li>
   </ol>
 </section>
 
@@ -212,13 +270,13 @@
       <span class="sec-label">The Ledger</span>
     </div>
     <div class="ledger__rail" id="rail">
-      <figure class="shot"><img src="hero-taillights.jpg" alt="Ferrari tail lights in the dark" loading="lazy"></figure>
-      <figure class="shot"><img src="saleen-s7.jpg" alt="Saleen S7 in a workshop" loading="lazy"></figure>
-      <figure class="shot"><img src="lambo-transport.jpg" alt="Blue Lamborghini on an enclosed transporter" loading="lazy"></figure>
-      <figure class="shot"><img src="ford-gt.jpg" alt="Ford GT in a private garage" loading="lazy"></figure>
-      <figure class="shot"><img src="ferrari-812.jpg" alt="Cream Ferrari 812 loading onto a transporter" loading="lazy"></figure>
-      <figure class="shot"><img src="maybach.jpg" alt="Two-tone Mercedes-Maybach on a transporter" loading="lazy"></figure>
-      <figure class="shot"><img src="delorean.jpg" alt="DeLorean DMC-12 on a lift" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/hero-taillights.jpg" alt="Ferrari tail lights in the dark" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/saleen-s7.jpg" alt="Saleen S7 in a workshop" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/lambo-transport.jpg" alt="Blue Lamborghini on an enclosed transporter" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/ford-gt.jpg" alt="Ford GT in a private garage" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/ferrari-812.jpg" alt="Cream Ferrari 812 loading onto a transporter" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/maybach.jpg" alt="Two-tone Mercedes-Maybach on a transporter" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/delorean.jpg" alt="DeLorean DMC-12 on a lift" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -232,11 +290,11 @@
 <!-- ══════════════ 07 · SUBMIT ══════════════ -->
 <section class="submit" id="submit">
   <div class="submit__bg" data-parallax="0.12">
-    <img src="countach.jpg" alt="" loading="lazy">
+    <img src="assets/countach.jpg" alt="" loading="lazy">
   </div>
   <div class="submit__inner">
     <h2 class="submit__h"><span class="line"><span class="line__in" data-split-lines>Bring us</span></span><span class="line"><span class="line__in" data-split-lines>your <em>next trade.</em></span></span></h2>
-    <p class="submit__p reveal-up">Every mandate begins the same way. One asset, one conversation, no obligation. Enquiries are read by a principal, not a queue.</p>
+    <p class="submit__p reveal-up">One asset. One conversation. No obligation.</p>
     <a href="mailto:J@TradingExotics.com?subject=Asset%20Submission" class="bigbtn">
       <span class="bigbtn__ring"></span>
       <span class="bigbtn__txt">Submit Asset</span>
@@ -264,6 +322,6 @@
   </div>
 </footer>
 
-<script src="main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
