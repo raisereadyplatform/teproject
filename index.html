@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trading Exotics | Trade What Others Can't</title>
+<meta name="description" content="A private, asset-to-asset exchange for supercars, real estate, equity, aircraft and rare collectibles. For principals who don't need to sell.">
+<meta name="theme-color" content="#0a0a0a">
+
+<meta property="og:title" content="Trading Exotics | Trade What Others Can't">
+<meta property="og:description" content="A private, asset-to-asset exchange. For the 1% who don't need to sell.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tradingexotics.com">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;1,6..96,400&family=Tenor+Sans&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="is-loading">
+
+<!-- ══════════════ film grain + vignette ══════════════ -->
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<!-- ══════════════ custom cursor ══════════════ -->
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span></div>
+
+<!-- ══════════════ scroll progress ══════════════ -->
+<div class="progress" aria-hidden="true"><i></i></div>
+
+<!-- ══════════════ preloader ══════════════ -->
+<div class="loader" id="loader">
+  <div class="loader__inner">
+    <div class="loader__mark"><span>TE.</span></div>
+    <div class="loader__bar"><i></i></div>
+    <div class="loader__meta">
+      <span class="loader__word">ESTABLISHING SECURE LINE</span>
+      <span class="loader__num">00</span>
+    </div>
+  </div>
+  <div class="loader__door loader__door--t"></div>
+  <div class="loader__door loader__door--b"></div>
+</div>
+
+<!-- ══════════════ nav ══════════════ -->
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top">
+    <span class="nav__mark">TE.</span><span class="nav__sub">GLOBAL</span>
+  </a>
+  <nav class="nav__links">
+    <a href="#thesis" class="nav__link"><span>The Thesis</span></a>
+    <a href="#swap" class="nav__link"><span>The Trade</span></a>
+    <a href="#practice" class="nav__link"><span>Practice</span></a>
+    <a href="#ledger" class="nav__link"><span>Ledger</span></a>
+  </nav>
+  <a href="#submit" class="nav__cta">
+    <span class="nav__cta-txt">Submit Asset</span>
+    <span class="nav__cta-fill"></span>
+  </a>
+</header>
+
+<main id="top">
+
+<!-- ══════════════ 01 · HERO ══════════════ -->
+<section class="hero" id="hero">
+  <div class="hero__media" data-parallax="0.18">
+    <img src="hero-taillights.jpg" alt="Ferrari tail lights glowing in a darkened room" fetchpriority="high">
+  </div>
+  <div class="hero__scrim"></div>
+
+  <div class="hero__grid">
+    <p class="eyebrow reveal-up"><span class="eyebrow__rule"></span>Private Exchange</p>
+
+    <h1 class="hero__title">
+      <span class="line"><span class="line__in" data-split>For the 1%</span></span>
+    </h1>
+
+    <p class="hero__lede reveal-up" data-delay="0.4">
+      who don't need to sell, but want to
+      experience something different.
+    </p>
+
+    <div class="hero__actions reveal-up" data-delay="0.55">
+      <a href="#submit" class="btn">
+        <span class="btn__label">Submit an Asset</span>
+      </a>
+      <a href="#thesis" class="btn btn--ghost">
+        <span class="btn__label">How it works</span>
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══════════════ marquee ══════════════ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track" data-marquee>
+    <span>Supercars<i>◆</i>Private Real Estate<i>◆</i>Equity Stakes<i>◆</i>Aircraft<i>◆</i>Rare Collectibles<i>◆</i></span>
+    <span>Supercars<i>◆</i>Private Real Estate<i>◆</i>Equity Stakes<i>◆</i>Aircraft<i>◆</i>Rare Collectibles<i>◆</i></span>
+  </div>
+</div>
+
+<!-- ══════════════ 02 · THESIS ══════════════ -->
+<section class="thesis" id="thesis">
+  <div class="sec-head">
+    <span class="sec-label">The Thesis</span>
+  </div>
+
+  <h2 class="thesis__head">
+    <span class="line"><span class="line__in" data-split-lines>Trade what</span></span>
+    <span class="line"><span class="line__in" data-split-lines>others <em>can't.</em></span></span>
+  </h2>
+
+  <div class="thesis__body">
+    <p class="reveal-up">Supercars. Private real estate. Equity stakes. Aircraft. Rare collectibles. Assets that inherently hold substantial value, yet remain constrained by traditional marketplaces, treated as static listings that demand a cash-based exit.</p>
+    <p class="reveal-up" data-delay="0.1">In reviewing every structured exchange available to private principals, one absence was conspicuous: no discreet, sophisticated venue existed for seamless, direct asset-to-asset transaction.</p>
+    <p class="thesis__punch reveal-up" data-delay="0.2">Trading Exotics solved that.</p>
+  </div>
+
+</section>
+
+<!-- ══════════════ 03 · THE SWAP (scroll-driven centrepiece) ══════════════ -->
+<section class="swap" id="swap">
+  <div class="swap__sticky">
+
+    <div class="swap__stage">
+      <!-- asset A -->
+      <article class="card card--a" id="cardA">
+        <div class="card__img"><img src="f40.jpg" alt="Red Ferrari F40" loading="lazy"></div>
+        <div class="card__meta">
+          <span class="card__name">Ferrari F40</span>
+        </div>
+        <span class="card__corner card__corner--tl"></span><span class="card__corner card__corner--br"></span>
+      </article>
+
+      <!-- centre mechanism -->
+      <div class="swap__core" aria-hidden="true">
+        <span class="swap__glyph">⇄</span>
+        <span class="swap__wire swap__wire--l"></span>
+        <span class="swap__wire swap__wire--r"></span>
+      </div>
+
+      <!-- asset B -->
+      <article class="card card--b" id="cardB">
+        <div class="card__img"><img src="countach.jpg" alt="White Lamborghini Countach LPI 800-4" loading="lazy"></div>
+        <div class="card__meta">
+          <span class="card__name">Countach LPI 800-4</span>
+        </div>
+        <span class="card__corner card__corner--tl"></span><span class="card__corner card__corner--br"></span>
+      </article>
+    </div>
+
+    <!-- the three beats -->
+    <div class="swap__words">
+      <h2 class="swap__word is-on" data-beat="0"><span>Two principals.</span></h2>
+      <h2 class="swap__word" data-beat="1"><span>No cash.</span></h2>
+      <h2 class="swap__word" data-beat="2"><span>One trade.</span></h2>
+    </div>
+
+    <div class="swap__hud">
+      <span class="swap__hud-l">Direct asset-to-asset settlement</span>
+      <span class="swap__hud-bar"><i id="swapBar"></i></span>
+      <span class="swap__hud-r" id="swapPct">00%</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 04 · PRACTICE ══════════════ -->
+<section class="practice" id="practice">
+  <div class="sec-head">
+    <span class="sec-label">The Practice</span>
+  </div>
+
+  <ol class="prac">
+    <li class="prac__row">
+      <span class="prac__n">01</span>
+      <h3 class="prac__t">Creative HNWI Trading</h3>
+      <p class="prac__d">Structures that move value without liquidating it. Part-exchange, multi-leg, cash-balanced. Engineered around what you are unwilling to give up.</p>
+      <span class="prac__img"><img src="lambo-transport.jpg" alt="" loading="lazy"></span>
+      <span class="prac__line"></span>
+    </li>
+    <li class="prac__row">
+      <span class="prac__n">02</span>
+      <h3 class="prac__t">Structured Introductions</h3>
+      <p class="prac__d">We do not run a listings board. Counterparties are approached individually, on your terms, and only once the fit is real.</p>
+      <span class="prac__img"><img src="saleen-s7.jpg" alt="" loading="lazy"></span>
+      <span class="prac__line"></span>
+    </li>
+    <li class="prac__row">
+      <span class="prac__n">03</span>
+      <h3 class="prac__t">Verified Ownership</h3>
+      <p class="prac__d">Title, provenance, encumbrance and condition confirmed before a single name is exchanged. Nothing moves on a handshake alone.</p>
+      <span class="prac__img"><img src="ford-gt.jpg" alt="" loading="lazy"></span>
+      <span class="prac__line"></span>
+    </li>
+    <li class="prac__row">
+      <span class="prac__n">04</span>
+      <h3 class="prac__t">Confidential Negotiation</h3>
+      <p class="prac__d">No auction. No press. No public record. The transaction exists between two parties and the paperwork that closes it.</p>
+      <span class="prac__img"><img src="ferrari-812.jpg" alt="" loading="lazy"></span>
+      <span class="prac__line"></span>
+    </li>
+  </ol>
+</section>
+
+<!-- ══════════════ 05 · LEDGER (horizontal reel) ══════════════ -->
+<section class="ledger" id="ledger">
+  <div class="ledger__sticky">
+    <div class="sec-head sec-head--abs">
+      <span class="sec-label">The Ledger</span>
+    </div>
+    <div class="ledger__rail" id="rail">
+      <figure class="shot"><img src="hero-taillights.jpg" alt="Ferrari tail lights in the dark" loading="lazy"></figure>
+      <figure class="shot"><img src="saleen-s7.jpg" alt="Saleen S7 in a workshop" loading="lazy"></figure>
+      <figure class="shot"><img src="lambo-transport.jpg" alt="Blue Lamborghini on an enclosed transporter" loading="lazy"></figure>
+      <figure class="shot"><img src="ford-gt.jpg" alt="Ford GT in a private garage" loading="lazy"></figure>
+      <figure class="shot"><img src="ferrari-812.jpg" alt="Cream Ferrari 812 loading onto a transporter" loading="lazy"></figure>
+      <figure class="shot"><img src="maybach.jpg" alt="Two-tone Mercedes-Maybach on a transporter" loading="lazy"></figure>
+      <figure class="shot"><img src="delorean.jpg" alt="DeLorean DMC-12 on a lift" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 06 · QUOTE ══════════════ -->
+<section class="quote">
+  <blockquote class="quote__q" data-split-words>Be brave. Take risks. Nothing can substitute experience.</blockquote>
+  <cite class="quote__c reveal-up">Paulo Coelho</cite>
+</section>
+
+<!-- ══════════════ 07 · SUBMIT ══════════════ -->
+<section class="submit" id="submit">
+  <div class="submit__bg" data-parallax="0.12">
+    <img src="countach.jpg" alt="" loading="lazy">
+  </div>
+  <div class="submit__inner">
+    <h2 class="submit__h"><span class="line"><span class="line__in" data-split-lines>Bring us</span></span><span class="line"><span class="line__in" data-split-lines>your <em>next trade.</em></span></span></h2>
+    <p class="submit__p reveal-up">Every mandate begins the same way. One asset, one conversation, no obligation. Enquiries are read by a principal, not a queue.</p>
+    <a href="mailto:J@TradingExotics.com?subject=Asset%20Submission" class="bigbtn">
+      <span class="bigbtn__ring"></span>
+      <span class="bigbtn__txt">Submit Asset</span>
+      <span class="bigbtn__arrow">→</span>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════ footer ══════════════ -->
+<footer class="foot">
+  <div class="foot__top">
+    <span class="foot__mark">TE.</span>
+    <div class="foot__word" aria-hidden="true"><span data-omerta>OMERTA</span></div>
+    <div class="foot__cols">
+      <div><span class="foot__k">Enquiries</span><a class="foot__v foot__v--link" href="mailto:J@TradingExotics.com">J@TradingExotics.com</a></div>
+      <div><span class="foot__k">Follow</span><a class="foot__v foot__v--link" href="https://www.instagram.com/TradingExotics" target="_blank" rel="noopener">Instagram</a></div>
+      <div><span class="foot__k">Legal</span><a class="foot__v foot__v--link" href="https://tradingexotics.com/privacy-policy">Privacy Policy</a><a class="foot__v foot__v--link" href="https://tradingexotics.com/terms-and-conditions">Terms and Conditions</a></div>
+    </div>
+  </div>
+  <div class="foot__bar">
+    <span>Trading Exotics Global</span>
+    <span>© 2026 All rights reserved</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
