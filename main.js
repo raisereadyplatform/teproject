@@ -1,6 +1,8 @@
 (() => {
 'use strict';
 
+document.documentElement.classList.add('js');
+
 const $  = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
@@ -328,3 +330,4 @@ addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(measure, 15
 addEventListener('load', measure);
 
 })();
+
